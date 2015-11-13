@@ -23,6 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 function sera_minimum_age() {
 	
 	echo sera_get_minimum_age();
+
 }
 
 /**
@@ -221,8 +222,9 @@ function sera_needs_verification() {
  * @echo string
  */
 function sera_the_heading() {
-	
+
 	echo sera_get_the_heading();
+
 }
 
 /**

@@ -131,53 +131,185 @@ final class Simple_Age_Restriction_Admin {
 	public function register_settings() {
 		
 		/* General Section */
-		add_settings_section( 'sera_settings_general', null, 'sera_settings_callback_section_general', 'simple-age-restriction' );
+		add_settings_section( 
+			'sera_settings_general', 
+			null, 
+			'sera_settings_callback_section_general', 
+			'simple-age-restriction' 
+		);
 	 	
 	 	// What to protect (entire site or specific content)
-		add_settings_field( '_sera_require_for', __( 'Require verification for', 'sera' ), 'sera_settings_callback_require_for_field', 'simple-age-restriction', 'sera_settings_general' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_require_for', 'esc_attr' );
+		add_settings_field( 
+			'_sera_require_for', 
+			__( 'Require verification for', 'sera' ), 
+			'sera_settings_callback_require_for_field', 
+			'simple-age-restriction', 
+			'sera_settings_general' 
+		);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_require_for', 
+	 		'esc_attr' 
+	 	);
 	 	
 	 	// Who to verify (logged in or all)
-		add_settings_field( '_sera_always_verify', __( 'Verify the age of', 'sera' ), 'sera_settings_callback_always_verify_field', 'simple-age-restriction', 'sera_settings_general' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_always_verify', 'esc_attr' );
+		add_settings_field( 
+			'_sera_always_verify', 
+			__( 'Verify the age of', 'sera' ), 
+			'sera_settings_callback_always_verify_field', 
+			'simple-age-restriction', 
+			'sera_settings_general' 
+		);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_always_verify', 
+	 		'esc_attr' 
+	 	);
 	 	
 	 	// Minimum Age
-		add_settings_field( '_sera_minimum_age', '<label for="_sera_minimum_age">' . __( 'Visitors must be', 'sera' ) . '</label>', 'sera_settings_callback_minimum_age_field', 'simple-age-restriction', 'sera_settings_general' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_minimum_age', 'intval' );
+		add_settings_field( 
+			'_sera_minimum_age', 
+			'<label for="_sera_minimum_age">' . __( 'Visitors must be', 'sera' ) . '</label>', 
+			'sera_settings_callback_minimum_age_field', 
+			'simple-age-restriction', 
+			'sera_settings_general' 
+		);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_minimum_age', 
+	 		'intval' 
+	 	);
 	 	
 	 	// Memory Length
-	 	add_settings_field( '_sera_cookie_duration', '<label for="_sera_cookie_duration">' . __( 'Remember visitors for', 'sera' ) . '</label>', 'sera_settings_callback_cookie_duration_field', 'simple-age-restriction', 'sera_settings_general' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_cookie_duration', 'intval' );
+	 	add_settings_field( 
+	 		'_sera_cookie_duration', 
+	 		'<label for="_sera_cookie_duration">' . __( 'Remember visitors for', 'sera' ) . '</label>', 
+	 		'sera_settings_callback_cookie_duration_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_general' 
+	 	);
 	 	
-	 	add_settings_field( '_sera_membership', __( 'Membership', 'sera' ), 'sera_settings_callback_membership_field', 'simple-age-restriction', 'sera_settings_general' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_membership', 'intval' );
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_cookie_duration', 
+	 		'intval' 
+	 	);
+	 	
+	 	add_settings_field( 
+	 		'_sera_membership', 
+	 		__( 'Membership', 'sera' ), 
+	 		'sera_settings_callback_membership_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_general' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_membership', 
+	 		'intval' 
+	 	);
 	 	
 	 	/* Display Section */
-	 	add_settings_section( 'sera_settings_display', __( 'Display Options', 'sera' ), 'sera_settings_callback_section_display', 'simple-age-restriction' );
+	 	add_settings_section( 
+	 		'sera_settings_display', 
+	 		__( 'Display Options', 'sera' ), 
+	 		'sera_settings_callback_section_display', 
+	 		'simple-age-restriction' 
+	 	);
 	 	
 	 	// Heading
-	 	add_settings_field( '_sera_heading', '<label for="_sera_heading">' . __( 'Overlay Heading', 'sera' ) . '</label>', 'sera_settings_callback_heading_field', 'simple-age-restriction', 'sera_settings_display' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_heading', 'esc_attr' );
+	 	add_settings_field( 
+	 		'_sera_heading', 
+	 		'<label for="_sera_heading">' . __( 'Overlay Heading', 'sera' ) . '</label>', 
+	 		'sera_settings_callback_heading_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_heading', 
+	 		'esc_attr' 
+	 	);
 	 	
 	 	// Description
-	 	add_settings_field( '_sera_description', '<label for="_sera_description">' . __( 'Overlay Description', 'sera' ) . '</label>', 'sera_settings_callback_description_field', 'simple-age-restriction', 'sera_settings_display' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_description', 'esc_attr' );
+	 	
+	 	add_settings_field( 
+	 		'_sera_description', 
+	 		'<label for="_sera_description">' . __( 'Overlay Description', 'sera' ) . '</label>', 
+	 		'sera_settings_callback_description_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_description', 
+	 		'esc_attr' 
+	 	);
 	 	
 	 	// Input Type
-	 	add_settings_field( '_sera_input_type', '<label for="_sera_input_type">' . __( 'Verify ages using', 'sera' ) . '</label>', 'sera_settings_callback_input_type_field', 'simple-age-restriction', 'sera_settings_display' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_input_type', 'esc_attr' );
+	 	add_settings_field( 
+	 		'_sera_input_type', 
+	 		'<label for="_sera_input_type">' . __( 'Verify ages using', 'sera' ) . '</label>', 
+	 		'sera_settings_callback_input_type_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_input_type', 
+	 		'esc_attr' 
+	 	);
 	 	
 	 	// Enable CSS
-	 	add_settings_field( '_sera_styling', __( 'Styling', 'sera' ), 'sera_settings_callback_styling_field', 'simple-age-restriction', 'sera_settings_display' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_styling', 'intval' );
+	 	add_settings_field( 
+	 		'_sera_styling', 
+	 		__( 'Styling', 'sera' ), 
+	 		'sera_settings_callback_styling_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_styling', 
+	 		'intval' 
+	 	);
 	 	
 	 	// Overlay Color
-	 	add_settings_field( '_sera_overlay_color', __( 'Overlay Color', 'sera' ), 'sera_settings_callback_overlay_color_field', 'simple-age-restriction', 'sera_settings_display' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_overlay_color', array( $this, 'validate_color' ) );
+	 	add_settings_field( 
+	 		'_sera_overlay_color', 
+	 		__( 'Overlay Color', 'sera' ), 
+	 		'sera_settings_callback_overlay_color_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_overlay_color', 
+	 		array( $this, 'validate_color' ) 
+	 	);
 	 	
 	 	// Background Color
-	 	add_settings_field( '_sera_bgcolor', __( 'Background Color', 'sera' ), 'sera_settings_callback_bgcolor_field', 'simple-age-restriction', 'sera_settings_display' );
-	 	register_setting  ( 'simple-age-restriction', '_sera_bgcolor', array( $this, 'validate_color' ) );
+	 	add_settings_field( 
+	 		'_sera_bgcolor', 
+	 		__( 'Background Color', 'sera' ), 
+	 		'sera_settings_callback_bgcolor_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_bgcolor', 
+	 		array( $this, 'validate_color' ) 
+	 	);
 		
 		do_action( 'sera_register_settings' );
 	}

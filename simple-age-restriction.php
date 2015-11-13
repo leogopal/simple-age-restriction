@@ -24,7 +24,20 @@ if ( ! defined( 'WPINC' ) ) { die(); }
 /**
  * The main class definition.
  */
+
+/**
+ * Get the bootstrap! If using the plugin from wordpress.org, REMOVE THIS!
+ */
+
+// if ( file_exists( plugin_dir_path( __FILE__ ) . '/includes/cmb/init.php' ) ) {
+// 	require_once plugin_dir_path( __FILE__ ) . '/includes/cmb/init.php';
+// } elseif ( file_exists( plugin_dir_path( __FILE__ ) . '/includes/CMB/init.php' ) ) {
+// 	require_once plugin_dir_path( __FILE__ ) . '/includes/CMB/init.php';
+// }
+
+
 require( plugin_dir_path( __FILE__ ) . 'includes/class-simple-age-restriction.php' );
+// require( plugin_dir_path( __FILE__ ) . 'includes/admin/class-simple-age-restriction-admin-options.php' );
 
 // Get the plugin running.
 add_action( 'plugins_loaded', array( 'Simple_Age_Restriction', 'get_instance' ) );
