@@ -206,7 +206,7 @@ final class Simple_Age_Restriction {
 		
 		<style type="text/css">
 			
-			#sera-overlay-wrap { 
+			#sera-overlay-wrap, #sera-overlay-wrap #sera-overlay-inner { 
 				background: #<?php echo esc_attr( sera_get_background_color() ); ?>;
 			}
 			
@@ -240,28 +240,31 @@ final class Simple_Age_Restriction {
 		define( 'DONOTCACHEPAGE', true ); ?>
 		
 		<div id="sera-overlay-wrap">
-			
-			<?php do_action( 'sera_before_modal' ); ?>
-			<h1><?php esc_html_e( sera_get_the_title() ); ?></h1>
-			<h1><?php esc_html_e( sera_get_the_sub_title() ); ?></h1>
-			
-			<div id="sera-overlay">
+			<div id="sera-overlay-inner">
+
+				<?php do_action( 'sera_before_modal' ); ?>
 				
-				<h2><?php esc_html_e( sera_get_the_heading() ); ?></h2>
+				<h1 class="title"><?php esc_html_e( sera_get_the_title() ); ?></h1>
+				<h1 class="sub-title"><?php esc_html_e( sera_get_the_sub_title() ); ?></h1>
 				
-				<?php if ( sera_get_the_desc() )
-					echo '<p>' . esc_html( sera_get_the_desc() ). '</p>'; ?>
-				
-				<?php do_action( 'sera_before_form' ); ?>
-				
-				<?php sera_verify_form(); ?>
+				<div id="sera-overlay">
 					
-				<?php do_action( 'sera_after_form' ); ?>
+					<h2><?php esc_html_e( sera_get_the_heading() ); ?></h2>
+					
+					<?php if ( sera_get_the_desc() )
+						echo '<p>' . esc_html( sera_get_the_desc() ). '</p>'; ?>
+					
+					<?php do_action( 'sera_before_form' ); ?>
+					
+					<?php sera_verify_form(); ?>
+						
+					<?php do_action( 'sera_after_form' ); ?>
+					
+				</div>
+				
+				<?php do_action( 'sera_after_modal' ); ?>
 				
 			</div>
-			
-			<?php do_action( 'sera_after_modal' ); ?>
-			
 		</div>
 	<?php }
 	
