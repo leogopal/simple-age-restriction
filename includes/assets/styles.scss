@@ -15,6 +15,8 @@
 	}
 
 	#sera-overlay-inner {
+		height: 100%;
+	width: 100%;
 		padding: 5px;
 		border: 10px solid #95c888;
 
@@ -23,16 +25,20 @@
 		}
 
 		h1 {
+			color: #95c888;
+			text-align: center;
+			font-size: 72px;
+			margin-top: 50px;
 			&.title {
 				@media screen and (min-width: 0) and (max-width: 480px) {
-					font-size: 32px;
+					font-size: 33px;
 					line-height: 15px;
-					margin-bottom: 0px;
+					margin-bottom: 5px;
 				}
 			}
 			&.sub-title {
 				@media screen and (min-width: 0) and (max-width: 480px) {
-					font-size: 38px;
+					font-size: 40px;
 					margin-top: 0px;
 				}
 			}
