@@ -112,12 +112,13 @@ final class Simple_Age_Restriction_Admin {
 	 */
 	public function add_settings_page() {
 	
-		add_options_page (
+		add_menu_page (
 			__( 'Simple Age Restriction', Simple_Age_Restriction::SLUG ),
-			__( 'Simple Age Restriction', Simple_Age_Restriction::SLUG ),
+			__( 'Age Restriction', Simple_Age_Restriction::SLUG ),
 			'manage_options',
 			'simple-age-restriction',
-			'sera_settings_page'
+			'sera_settings_page',
+			'dashicons-lock'
 		);
 	}
 	
@@ -198,20 +199,6 @@ final class Simple_Age_Restriction_Admin {
 	 		'intval' 
 	 	);
 	 	
-	 	add_settings_field( 
-	 		'_sera_membership', 
-	 		__( 'Membership', 'sera' ), 
-	 		'sera_settings_callback_membership_field', 
-	 		'simple-age-restriction', 
-	 		'sera_settings_general' 
-	 	);
-	 	
-	 	register_setting  ( 
-	 		'simple-age-restriction', 
-	 		'_sera_membership', 
-	 		'intval' 
-	 	);
-	 	
 	 	/* Display Section */
 	 	add_settings_section( 
 	 		'sera_settings_display', 
@@ -220,6 +207,36 @@ final class Simple_Age_Restriction_Admin {
 	 		'simple-age-restriction' 
 	 	);
 	 	
+	 	// Title
+	 	add_settings_field( 
+	 		'_sera_title', 
+	 		'<label for="_sera_title">' . __( 'Overlay Title', 'sera' ) . '</label>', 
+	 		'sera_settings_callback_title_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_title', 
+	 		'esc_attr' 
+	 	);
+
+	 	// Sub Title
+	 	add_settings_field( 
+	 		'_sera_sub_title', 
+	 		'<label for="_sera_sub_title">' . __( 'Overlay Sub-Title', 'sera' ) . '</label>', 
+	 		'sera_settings_callback_sub_title_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_sub_title', 
+	 		'esc_attr' 
+	 	);
+
 	 	// Heading
 	 	add_settings_field( 
 	 		'_sera_heading', 
@@ -236,7 +253,6 @@ final class Simple_Age_Restriction_Admin {
 	 	);
 	 	
 	 	// Description
-	 	
 	 	add_settings_field( 
 	 		'_sera_description', 
 	 		'<label for="_sera_description">' . __( 'Overlay Description', 'sera' ) . '</label>', 
@@ -248,6 +264,21 @@ final class Simple_Age_Restriction_Admin {
 	 	register_setting  ( 
 	 		'simple-age-restriction', 
 	 		'_sera_description', 
+	 		'esc_attr' 
+	 	);
+
+	 	// Button Text
+	 	add_settings_field( 
+	 		'_sera_button_text', 
+	 		'<label for="_sera_button_text">' . __( 'Button Text', 'sera' ) . '</label>', 
+	 		'sera_settings_callback_button_text_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display'
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_button_text', 
 	 		'esc_attr' 
 	 	);
 	 	

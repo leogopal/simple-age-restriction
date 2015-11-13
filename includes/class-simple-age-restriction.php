@@ -211,7 +211,7 @@ final class Simple_Age_Restriction {
 			}
 			
 			#sera-overlay {
-				background: #<?php echo esc_attr( sera_get_overlay_color() ); ?>;
+				/*background: #<?php echo esc_attr( sera_get_overlay_color() ); ?>;*/
 			}
 			
 		</style>
@@ -242,10 +242,12 @@ final class Simple_Age_Restriction {
 		<div id="sera-overlay-wrap">
 			
 			<?php do_action( 'sera_before_modal' ); ?>
+			<h1><?php esc_html_e( sera_get_the_title() ); ?></h1>
+			<h1><?php esc_html_e( sera_get_the_sub_title() ); ?></h1>
 			
 			<div id="sera-overlay">
 				
-				<h1><?php esc_html_e( sera_get_the_heading() ); ?></h1>
+				<h2><?php esc_html_e( sera_get_the_heading() ); ?></h2>
 				
 				<?php if ( sera_get_the_desc() )
 					echo '<p>' . esc_html( sera_get_the_desc() ). '</p>'; ?>
