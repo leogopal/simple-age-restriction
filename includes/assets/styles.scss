@@ -2,7 +2,7 @@
 	position: fixed; 
 	height: 100%;
 	width: 100%;
-	background: #000;
+	background: #ec1e33;
 	z-index: 10000;
 	display: block;
 	top: 0;
@@ -10,15 +10,49 @@
 	overflow-y: scroll;
 	padding: 30px;
 
+	.bg-image {
+		background-image: url("img/red-desk.png");
+	    background-repeat: no-repeat;
+		background-position: center bottom;
+	    background-size: 50%;
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    bottom: 0px;
+	    right: 0px;
+	    z-index: -1;
+	    background-attachment: fixed;
+	    @media screen and (min-width: 481px) and (max-width: 980px) {
+			background-size: 80%;
+	    }
+		@media screen and (min-width: 0) and (max-width: 480px) {
+			background-image: url("img/red.png");
+		    background-repeat: no-repeat;
+			background-position: center bottom;
+		    background-size: 100%;
+		    width: 100%;
+		    height: 120%;
+		    position: absolute;
+		    bottom: 0px;
+		    right: 0px;
+		    z-index: -1;
+		    background-attachment: fixed;
+		}
+	}
+	
+
 	@media screen and (min-width: 0) and (max-width: 480px) {
 		padding: 20px;
 	}
 
 	#sera-overlay-inner {
 		height: 100%;
-	width: 100%;
+		width: 100%;
 		padding: 5px;
 		border: 10px solid #95c888;
+		z-index: 2;
+		background: transparent;
+
 
 		@media screen and (min-width: 0) and (max-width: 480px) {
 			border: 5px solid #95c888;
@@ -27,19 +61,34 @@
 		h1 {
 			color: #95c888;
 			text-align: center;
-			font-size: 72px;
 			margin-top: 50px;
 			&.title {
+				font-size: 66px;
+				line-height: 75px;
+				margin-bottom: 15px;
 				@media screen and (min-width: 0) and (max-width: 480px) {
 					font-size: 33px;
 					line-height: 15px;
 					margin-bottom: 5px;
 				}
+			    @media screen and (min-width: 481px) and (max-width: 640px) {
+					font-size: 43px;
+					line-height: 45px;
+					margin-bottom: 15px;
+				}
 			}
 			&.sub-title {
+				font-size: 80px;
+				margin-top: 0px;
 				@media screen and (min-width: 0) and (max-width: 480px) {
 					font-size: 40px;
 					margin-top: 0px;
+				}
+
+			    @media screen and (min-width: 481px) and (max-width: 640px) {
+					font-size: 53px;
+					line-height: 15px;
+					margin-bottom: 5px;
 				}
 			}
 			
@@ -56,8 +105,14 @@
 			text-align: center;
 			padding: 30px 40px 34px;
 			color: white;
+			width: 400px;
+			margin-top: 100px;
+			@media screen and (min-width: 0) and (max-width: 480px) {
+				margin-top: 120px;
+			}
 
 			h2 {
+				font-size: 25px;
 				margin-bottom: 20px;
 				color: white;
 				@media screen and (min-width: 0) and (max-width: 480px) {
@@ -81,11 +136,67 @@
 			.submit {
 				margin-bottom: 0;
 			}
+			.date-inputs {
+				background: white none repeat scroll 0% 0%;
+				width: 200px;
+				margin: 0 auto;
+				color: #95c888;
+				border-radius: 5px;
 
-			input[type=text] {
-				width: 50px;
-				outline: none;
+				input[type=text] {
+					width: 50px;
+					outline: none;
+					text-align: center;
+					margin-bottom: 0;
+					border: none;
+					color: #95c888;
+					padding: 10px;
+
+					&::-webkit-input-placeholder {
+					   color: #95c888;
+					}
+
+					&:-moz-placeholder { 
+						color:#95c888; 
+					}
+
+					&::-moz-placeholder { 
+					   color: #95c888;  
+					}
+
+					&:-ms-input-placeholder {  
+					   color: #95c888  
+					}
+
+					&:focus {
+
+						&::-webkit-input-placeholder {
+							transition: opacity 0.5s 0.5s ease; 
+							opacity: 0;
+						}
+
+						&:-moz-placeholder { 
+							transition: opacity 0.5s 0.5s ease; 
+							opacity: 0;
+						}
+
+						&::-moz-placeholder {
+							transition: opacity 0.5s 0.5s ease; 
+							opacity: 0;
+						}
+						
+						&:-ms-input-placeholder {
+							transition: opacity 0.5s 0.5s ease; 
+							opacity: 0;
+						}
+
+
+					}
+
+				}
+
 			}
+
 
 			#sera_verify_y {
 				width: 70px;

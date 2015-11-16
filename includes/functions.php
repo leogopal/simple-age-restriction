@@ -461,10 +461,11 @@ function sera_get_verify_form() {
 		// If set to date inputs
 		case 'inputs' :
 			
-			$form .= '<p>
+			$form .= '<div class="date-inputs"><p>
 			<input type="text" name="sera_verify_d" id="sera_verify_d" maxlength="2" value="" placeholder="DD" /> / 
 			<input type="text" name="sera_verify_m" id="sera_verify_m" maxlength="2" value="" placeholder="MM" /> / 
-			<input type="text" name="sera_verify_y" id="sera_verify_y" maxlength="4" value="" placeholder="YYYY" /></p>';
+			<input type="text" name="sera_verify_y" id="sera_verify_y" maxlength="4" value="" placeholder="YYYY" />
+			</p></div>';
 			
 			break;
 			

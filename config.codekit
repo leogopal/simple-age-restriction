@@ -31,6 +31,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/includes\/assets\/img\/red-desk.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 389567,
+		"inputAbbreviatedPath": "\/includes\/assets\/img\/red-desk.png",
+		"outputAbbreviatedPath": "\/includes\/assets\/img\/red-desk.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/includes\/assets\/img\/red.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/includes\/assets\/img\/red.png",
+		"outputAbbreviatedPath": "\/includes\/assets\/img\/red.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/includes\/assets\/styles.css": {
 		"fileType": 16,
 		"ignore": 1,

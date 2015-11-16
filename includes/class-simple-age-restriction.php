@@ -207,7 +207,7 @@ final class Simple_Age_Restriction {
 		<style type="text/css">
 			
 			#sera-overlay-wrap, #sera-overlay-wrap #sera-overlay-inner { 
-				background: #<?php echo esc_attr( sera_get_background_color() ); ?>;
+				/*background: #<?php echo esc_attr( sera_get_background_color() ); ?>;*/
 			}
 			
 			#sera-overlay {
@@ -240,7 +240,9 @@ final class Simple_Age_Restriction {
 		define( 'DONOTCACHEPAGE', true ); ?>
 		
 		<div id="sera-overlay-wrap">
+			
 			<div id="sera-overlay-inner">
+
 
 				<?php do_action( 'sera_before_modal' ); ?>
 				
@@ -265,6 +267,7 @@ final class Simple_Age_Restriction {
 				<?php do_action( 'sera_after_modal' ); ?>
 				
 			</div>
+			<div class="bg-image"></div>
 		</div>
 	<?php }
 	
