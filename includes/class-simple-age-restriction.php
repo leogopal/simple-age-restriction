@@ -357,12 +357,12 @@ final class Simple_Age_Restriction {
 			
 			do_action( 'sera_was_verified' );
 			
-			// if ( isset( $_POST['sera_verify_remember'] ) )
-			// 	$cookie_duration = time() +  ( sera_get_cookie_duration() * 60 );
-			// else
-			// 	$cookie_duration = 0;
+			if ( isset( $_POST['sera_verify_remember'] ) )
+				$cookie_duration = time() +  ( sera_get_cookie_duration() * 60 );
+			else
+				$cookie_duration = 0;
 			
-			// setcookie( 'age-verified', 1, $cookie_duration, COOKIEPATH, COOKIE_DOMAIN, false );
+			setcookie( 'age-verified', 1, $cookie_duration, COOKIEPATH, COOKIE_DOMAIN, false );
 			
 			wp_redirect( esc_url_raw( $redirect_url ) . '?age-verified=' . wp_create_nonce( 'age-verified' ) );
 			exit;
