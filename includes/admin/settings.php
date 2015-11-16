@@ -114,25 +114,6 @@ function sera_settings_callback_cookie_duration_field() { ?>
 	
 <?php }
 
-/**
- * Prints the membership settings field.
- *
- * @since 0.1
- */
-function sera_settings_callback_membership_field() { ?>
-	
-	<fieldset>
-		<legend class="screen-reader-text">
-			<span><?php esc_html_e( 'Membership', 'sera' ); ?></span>
-		</legend>
-		<label for="_sera_membership">
-			<input name="_sera_membership" type="checkbox" id="_sera_membership" value="1" <?php checked( 1, get_option( '_sera_membership', 1 ) ); ?>/>
-			 <?php esc_html_e( 'Require users to confirm their age before registering to this site', 'sera' ); ?>
-		</label>
-	</fieldset>
-	
-<?php }
-
 
 /**********************************************************/
 /******************** Display Settings ********************/
@@ -147,6 +128,28 @@ function sera_settings_callback_section_display() {
 	
 	echo '<p>' . esc_html__( 'These settings change the look of your overlay. You can use <code>%s</code> to display the minimum age number from the setting above.', 'sera' ) . '</p>';
 }
+
+/**
+ * Prints the modal title settings field.
+ *
+ * @since 0.1
+ */
+function sera_settings_callback_title_field() { ?>
+	
+	<input name="_sera_title" type="text" id="_sera_title" value="<?php echo esc_attr( get_option( '_sera_title', __( 'Title', 'sera' ) ) ); ?>" class="regular-text" />
+	
+<?php }
+
+/**
+ * Prints the modal title settings field.
+ *
+ * @since 0.1
+ */
+function sera_settings_callback_sub_title_field() { ?>
+	
+	<input name="_sera_sub_title" type="text" id="_sera_sub_title" value="<?php echo esc_attr( get_option( '_sera_sub_title', __( 'Title', 'sera' ) ) ); ?>" class="regular-text" />
+	
+<?php }
 
 /**
  * Prints the modal heading settings field.
@@ -167,6 +170,17 @@ function sera_settings_callback_heading_field() { ?>
 function sera_settings_callback_description_field() { ?>
 	
 	<input name="_sera_description" type="text" id="_sera_description" value="<?php echo esc_attr( get_option( '_sera_description', __( 'Please verify your age', 'sera' ) ) ); ?>" class="regular-text" />
+	
+<?php }
+
+/**
+ * Prints the modal button text settings field.
+ *
+ * @since 0.1
+ */
+function sera_settings_callback_button_text_field() { ?>
+	
+	<input name="_sera_button_text" type="text" id="_sera_button_text" value="<?php echo esc_attr( get_option( '_sera_button_text', __( 'I am old enough!', 'sera' ) ) ); ?>" class="regular-text" />
 	
 <?php }
 

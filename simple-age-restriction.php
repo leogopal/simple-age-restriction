@@ -26,6 +26,7 @@ if ( ! defined( 'WPINC' ) ) { die(); }
  */
 require( plugin_dir_path( __FILE__ ) . 'includes/class-simple-age-restriction.php' );
 
+
 // Get the plugin running.
 add_action( 'plugins_loaded', array( 'Simple_Age_Restriction', 'get_instance' ) );
 

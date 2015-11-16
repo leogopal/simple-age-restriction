@@ -1,64 +1,204 @@
-#sera-overlay-wrap { 
-	position: fixed; 
-	height: 100%;
-	width: 100%;
-	background: #E6E6E6;
-	z-index: 10000;
-	display: block;
-	top: 0;
-	left: 0; 
+#sera-overlay-wrap {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #ec1e33;
+  z-index: 10000;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  padding: 30px;
 }
-
-#sera-overlay {
-	position: fixed; 
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background: white;
-	z-index: 10001;
-	padding: 30px 40px 34px;
-	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-	   -moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-	        box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+#sera-overlay-wrap .bg-image {
+  background-image: url("img/red-desk.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+  background-attachment: fixed;
 }
-#sera-overlay h1 {
-	margin-bottom: 20px;
+@media screen and (min-width: 481px) and (max-width: 980px) {
+  #sera-overlay-wrap .bg-image {
+    background-size: 80%;
+  }
 }
-#sera-overlay p {
-	margin-bottom: 10px;
+@media screen and (min-width: 0) and (max-width: 480px) {
+  #sera-overlay-wrap .bg-image {
+    background-image: url("img/red.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    width: 100%;
+    height: 120%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: -1;
+    background-attachment: fixed;
+  }
 }
-#sera-overlay .submit {
-	margin-bottom: 0;
+@media screen and (min-width: 0) and (max-width: 480px) {
+  #sera-overlay-wrap {
+    padding: 20px;
+  }
 }
-
-#sera-overlay input[type=text] {
-	width: 50px;
-	outline: none;
+#sera-overlay-wrap #sera-overlay-inner {
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  border: 10px solid #95c888;
+  z-index: 2;
+  background: transparent;
 }
-#sera-overlay #sera_verify_y {
-	width: 70px;
+@media screen and (min-width: 0) and (max-width: 480px) {
+  #sera-overlay-wrap #sera-overlay-inner {
+    border: 5px solid #95c888;
+  }
 }
-
-#sera-overlay .error {
-	padding: 12px;
-	background-color: #ffebe8;
-	border: 1px solid #c00;
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-	        border-radius: 3px;
+#sera-overlay-wrap #sera-overlay-inner h1 {
+  color: #95c888;
+  text-align: center;
+  margin-top: 50px;
 }
-
-/* Minimum width of 400 pixels. */
-@media screen and (min-width: 400px) {
-	
-	#sera-overlay {
-		position: relative;
-		top: auto;
-		left: auto;
-		width: 40%;
-		height: auto;
-		margin: 100px auto 0 auto;
-	}
-	
+#sera-overlay-wrap #sera-overlay-inner h1.title {
+  font-size: 66px;
+  line-height: 75px;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 0) and (max-width: 480px) {
+  #sera-overlay-wrap #sera-overlay-inner h1.title {
+    font-size: 33px;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 640px) {
+  #sera-overlay-wrap #sera-overlay-inner h1.title {
+    font-size: 43px;
+    line-height: 45px;
+    margin-bottom: 15px;
+  }
+}
+#sera-overlay-wrap #sera-overlay-inner h1.sub-title {
+  font-size: 80px;
+  margin-top: 0px;
+}
+@media screen and (min-width: 0) and (max-width: 480px) {
+  #sera-overlay-wrap #sera-overlay-inner h1.sub-title {
+    font-size: 40px;
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 640px) {
+  #sera-overlay-wrap #sera-overlay-inner h1.sub-title {
+    font-size: 53px;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay {
+  margin: 0 auto;
+  background: transparent;
+  z-index: 10001;
+  text-align: center;
+  padding: 30px 40px 34px;
+  color: white;
+  width: 400px;
+  margin-top: 100px;
+}
+@media screen and (min-width: 0) and (max-width: 480px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay {
+    margin-top: 120px;
+  }
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: white;
+}
+@media screen and (min-width: 0) and (max-width: 480px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay h2 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay p {
+  margin-bottom: 10px;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay input[type=submit] {
+  background: #95c888;
+  border: #95c888;
+  color: white;
+  padding: 5px 50px;
+  height: auto;
+  border-radius: 5px;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .submit {
+  margin-bottom: 0;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs {
+  background: white none repeat scroll 0% 0%;
+  width: 200px;
+  margin: 0 auto;
+  color: #95c888;
+  border-radius: 5px;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text] {
+  width: 50px;
+  outline: none;
+  text-align: center;
+  margin-bottom: 0;
+  border: none;
+  color: #95c888;
+  padding: 10px;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text]::-webkit-input-placeholder {
+  color: #95c888;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text]:-moz-placeholder {
+  color: #95c888;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text]::-moz-placeholder {
+  color: #95c888;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text]:-ms-input-placeholder {
+  color: #95c888;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text]:focus::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.5s 0.5s ease;
+          transition: opacity 0.5s 0.5s ease;
+  opacity: 0;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text]:focus:-moz-placeholder {
+  transition: opacity 0.5s 0.5s ease;
+  opacity: 0;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text]:focus::-moz-placeholder {
+  transition: opacity 0.5s 0.5s ease;
+  opacity: 0;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text]:focus:-ms-input-placeholder {
+  transition: opacity 0.5s 0.5s ease;
+  opacity: 0;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay #sera_verify_y {
+  width: 70px;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .error {
+  padding: 12px;
+  background-color: #ffebe8;
+  border: 1px solid #c00;
+  border-radius: 3px;
+}
+@media screen and (min-width: 0) and (max-width: 480px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay {
+    padding: 0px;
+    width: 100%;
+  }
 }
