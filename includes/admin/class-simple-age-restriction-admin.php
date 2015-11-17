@@ -296,6 +296,36 @@ final class Simple_Age_Restriction_Admin {
 	 		'_sera_input_type', 
 	 		'esc_attr' 
 	 	);
+
+	 	// Enable Remember Me Options
+	 	add_settings_field( 
+	 		'_sera_remember_display', 
+	 		__( 'Enable Remember me', 'sera' ), 
+	 		'sera_settings_callback_remember_display_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_remember_display', 
+	 		'intval' 
+	 	);
+
+	 	// Enable ARA Notice
+	 	add_settings_field( 
+	 		'_sera_ara_notice', 
+	 		__( 'Enable ARA Notice', 'sera' ), 
+	 		'sera_settings_callback_ara_notice_field', 
+	 		'simple-age-restriction', 
+	 		'sera_settings_display' 
+	 	);
+	 	
+	 	register_setting  ( 
+	 		'simple-age-restriction', 
+	 		'_sera_ara_notice', 
+	 		'intval' 
+	 	);
 	 	
 	 	// Enable CSS
 	 	add_settings_field( 

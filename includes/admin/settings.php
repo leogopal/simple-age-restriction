@@ -110,7 +110,7 @@ function sera_settings_callback_minimum_age_field() { ?>
  */
 function sera_settings_callback_cookie_duration_field() { ?>
 	
-	<input name="_sera_cookie_duration" type="number" id="_sera_cookie_duration" step="15" min="15" class="small-text" value="<?php echo esc_attr( get_option( '_sera_cookie_duration', '720' ) ); ?>" /> <?php esc_html_e( 'minutes', 'sera' ); ?>
+	<input name="_sera_cookie_duration" type="number" id="_sera_cookie_duration" step="15" min="15" class="small-text" value="<?php echo esc_attr( get_option( '_sera_cookie_duration', '720' ) ); ?>" /> <?php esc_html_e( 'minutes (only applicable if the Remember me option is enabled, defaults to a single session)', 'sera' ); ?>
 	
 <?php }
 
@@ -196,6 +196,44 @@ function sera_settings_callback_input_type_field() { ?>
 		<option value="inputs" <?php selected( 'inputs', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'Inputs', 'sera' ); ?></option>
 		<option value="checkbox" <?php selected( 'checkbox', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'Confirm checkbox', 'sera' ); ?></option>
 	</select>
+	
+<?php }
+
+/**
+ * Prints the Remember Me Display option settings field.
+ *
+ * @since 0.1
+ */
+function sera_settings_callback_remember_display_field() { ?>
+	
+	<fieldset>
+		<legend class="screen-reader-text">
+			<span><?php esc_html_e( 'Enable Remember me', 'sera' ); ?></span>
+		</legend>
+		<label for="_sera_remember_display">
+			<input name="_sera_remember_display" type="checkbox" id="_sera_remember_display" value="1" <?php checked( 1, get_option( '_sera_remember_display', 1 ) ); ?>/>
+			 <?php esc_html_e( 'Enable the Remember Me option for longer cookies.', 'sera' ); ?>
+		</label>
+	</fieldset>
+	
+<?php }
+
+/**
+ * Prints the ARA Notice option settings field.
+ *
+ * @since 0.1
+ */
+function sera_settings_callback_ara_notice_field() { ?>
+	
+	<fieldset>
+		<legend class="screen-reader-text">
+			<span><?php esc_html_e( 'Enable ARA Notice', 'sera' ); ?></span>
+		</legend>
+		<label for="_sera_ara_notice">
+			<input name="_sera_ara_notice" type="checkbox" id="_sera_ara_notice" value="1" <?php checked( 1, get_option( '_sera_ara_notice', 1 ) ); ?>/>
+			 <?php esc_html_e( 'This option activates the ARA sticky footer notice.', 'sera' ); ?>
+		</label>
+	</fieldset>
 	
 <?php }
 

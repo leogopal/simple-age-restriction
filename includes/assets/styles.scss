@@ -40,6 +40,28 @@
 		}
 	}
 	
+	#araFooter {
+		border-top: 1px solid #8B2331;
+	    padding: 5px 0px;
+	    text-align: center;
+	    bottom: 0px;
+	    left: 0px;
+	    width: 100%;
+	    background: #FFF none repeat scroll 0% 0%;
+	    z-index: 1;
+	    position: fixed;
+
+	    p {
+	    	margin: 0px;
+	    }
+
+	    a {
+	    	color: #151515;
+	    	text-decoration: none;
+			font-weight: 300;
+	    }
+	}
+	
 
 	@media screen and (min-width: 0) and (max-width: 480px) {
 		padding: 20px;

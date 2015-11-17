@@ -266,7 +266,20 @@ final class Simple_Age_Restriction {
 				
 				<?php do_action( 'sera_after_modal' ); ?>
 				
+		
+    
 			</div>
+			<?php if (get_option( '_sera_ara_notice', 1 ) == 1) { ?>
+			   <div id="araFooter">
+			        <p>
+			            <a href="http://www.ara.co.za/" target="_blank" rel="nofollow">
+			                <img src="<?php echo plugin_dir_url( __FILE__ ); ?>assets/img/ara-logo.png" alt="Please Drink Responsibly" class="hide-on-mobile" height="55" width="80">
+							Not for sale to persons under the age of 18. Please Drink Responsibly.
+			                <img src="<?php echo plugin_dir_url( __FILE__ ); ?>assets/img/ara_noUnderAge.gif" alt="No Under 18's Allowed" class="hide-on-mobile">
+			            </a>
+			        </p>
+			    </div>
+			<?php } ?>
 			<div class="bg-image"></div>
 		</div>
 	<?php }
