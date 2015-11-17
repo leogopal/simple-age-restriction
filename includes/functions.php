@@ -485,8 +485,10 @@ function sera_get_verify_form() {
 	/**
 	 * Remember me section
 	 */
-	$form .= '<p class="submit"><label for="sera_verify_remember"><input type="checkbox" name="sera_verify_remember" id="sera_verify_remember" value="1" /> ' . esc_html__( 'Remember me', 'sera' ) . '</label> ';
 	
+	if (get_option( '_sera_remember_display', 1 ) == 1) {
+		$form .= '<p class="submit"><label for="sera_verify_remember"><input type="checkbox" name="sera_verify_remember" id="sera_verify_remember" value="1" /> ' . esc_html__( 'Remember me', 'sera' ) . '</label> ';
+	}
 	$form .= '<input type="submit" name="sera_verify" id="sera_verify" value="' . esc_attr( $submit_button_label ) . '" /></p>';
 
 	$form .= '</form>';

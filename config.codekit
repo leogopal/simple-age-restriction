@@ -31,6 +31,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/includes\/assets\/img\/ara-logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4551,
+		"inputAbbreviatedPath": "\/includes\/assets\/img\/ara-logo.png",
+		"outputAbbreviatedPath": "\/includes\/assets\/img\/ara-logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/includes\/assets\/img\/red-desk.png": {
 		"fileType": 32768,
 		"ignore": 0,
