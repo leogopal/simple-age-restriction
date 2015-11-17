@@ -64,6 +64,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/includes\/assets\/js\/jquery.autotab.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/includes\/assets\/js\/jquery.autotab.js",
+		"outputAbbreviatedPath": "\/includes\/assets\/js\/min\/jquery.autotab-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
+	"\/includes\/assets\/js\/min\/jquery.autotab-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/includes\/assets\/js\/min\/jquery.autotab-min.js",
+		"outputAbbreviatedPath": "\/includes\/assets\/js\/min\/min\/jquery.autotab-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/includes\/assets\/js\/min\/scripts-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/includes\/assets\/js\/min\/scripts-min.js",
+		"outputAbbreviatedPath": "\/includes\/assets\/js\/min\/min\/scripts-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/includes\/assets\/js\/scripts.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/includes\/assets\/js\/scripts.js",
+		"outputAbbreviatedPath": "\/includes\/assets\/js\/min\/scripts-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
 	"\/includes\/assets\/styles.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -134,7 +178,7 @@
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
 	"displayValue": "simple-age-restriction",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_brown"
 	},
 "projectSettings": {

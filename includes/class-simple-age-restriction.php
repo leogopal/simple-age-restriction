@@ -143,6 +143,9 @@ final class Simple_Age_Restriction {
 		
 		// Verify the visitor's input.
 		add_action( 'template_redirect', array( $this, 'verify' ) );
+
+		// Load Scripts
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		
 		// If checked in the settings, add to the registration form.
 		if ( sera_confirmation_required() ) {
@@ -193,6 +196,22 @@ final class Simple_Age_Restriction {
 	public function enqueue_styles() {
 		
 		wp_enqueue_style( 'sera-styles', plugin_dir_url( __FILE__ ) . 'assets/styles.css' );
+	}
+
+	/**
+	 * Enqueue the scripts.
+	 *
+	 * @since 0.1.0
+	 * 
+	 * @return void
+	 */
+	public function enqueue_scripts() {
+		wp_enqueue_script( 'sera-autotab', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.autotab.js', array(
+			'jquery'
+		) );
+		wp_enqueue_script( 'sera-scripts', plugin_dir_url( __FILE__ ) . 'assets/js/scripts.js', array(
+			'jquery',
+		) );
 	}
 	
 	/**
