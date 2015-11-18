@@ -362,6 +362,22 @@ final class Simple_Age_Restriction {
 					$error = 2; // Didn't check the box
 				
 				break;
+
+			case 'yearcheck' :
+				
+				if ( isset( $_POST['sera_verify_confirm'] ) && (int) $_POST['sera_verify_confirm'] == 1 && checkdate( 01, 01, (int) $_POST['sera_verify_y'] ) ) :
+					$age = sera_get_visitor_age_year( $_POST['sera_verify_y'] );
+
+					if ( $age >= sera_get_minimum_age() )
+						$is_verified = true;
+					else
+						$error = 3; // Not old enough
+
+				else :
+					$error = 5; // Didn't check the box
+				
+				endif;
+				break;
 			
 			default :
 				

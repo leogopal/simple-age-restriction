@@ -161,12 +161,21 @@
 #sera-overlay-wrap #sera-overlay-inner #sera-overlay .submit {
   margin-bottom: 0;
 }
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay input#sera_verify_confirm {
+  display: inline-block;
+}
 #sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs {
   background: white none repeat scroll 0% 0%;
   width: 250px;
   margin: 0 auto;
   color: #95c888;
   border-radius: 5px;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs.yearcheck {
+  width: 100px;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs.yearcheck input[type=text] {
+  width: 100px;
 }
 #sera-overlay-wrap #sera-overlay-inner #sera-overlay .date-inputs input[type=text] {
   width: 50px;
