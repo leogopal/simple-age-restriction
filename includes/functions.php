@@ -94,6 +94,48 @@ function sera_get_visitor_age( $year, $month, $day ) {
 }
 
 /**
+ * Get the visitor's age based on year input.
+ *
+ * @since 0.1.5
+ *
+ * @param string $year  The visitor's birth year.
+ * @return int $age The calculated age.
+ */
+function sera_get_visitor_age_year( $year ) {
+	
+	$age = 0;
+	
+	$birthday = new DateTime( $year . '-' . '01' . '-' . '01' );
+	
+	$phpversion = phpversion();
+	
+	if ( $phpversion >= '5.3' ) :
+		
+		$current  = new DateTime( current_time( 'mysql' ) );
+		$age      = $birthday->diff( $current );
+		$age      = $age->format( '%y' );
+		
+	else :
+		
+		list( $year, $month, $day ) = explode( '-', $birthday->format( 'Y-m-d' ) );
+		
+	    $year_diff  = date_i18n( 'Y' ) - $year;
+	    $month_diff = date_i18n( 'm' ) - $month;
+	    $day_diff   = date_i18n( 'd' ) - $day;
+	    
+	    if ( $month_diff < 0 )
+	    	$year_diff--;
+	    elseif ( ( $month_diff == 0 ) && ( $day_diff < 0 ) )
+	    	$year_diff--;
+	    
+	    $age = $year_diff;
+	    
+    endif;
+	
+	return (int) $age;
+}
+
+/**
  * Get the cookie duration.
  * 
  * This lets us know how long to keep a visitor's
@@ -411,6 +453,10 @@ function sera_get_verify_form() {
 		// Visitor entered an invalid date
 		if ( $error == 4 )
 			$error_string = apply_filters( 'sera_error_text_bad_date', __( 'Please enter a valid date', 'sera' ) );
+
+		// Visitor entered an invalid date and/or didnt check the box
+		if ( $error == 5 )
+			$error_string = apply_filters( 'sera_error_text_bad_date', __( 'Please check that the year is valid and you checked the box', 'sera' ) );
 		
 		$form .= '<p class="error">' . esc_html( $error_string ) . '</p>';
 		
@@ -475,6 +521,19 @@ function sera_get_verify_form() {
 			$form .= '<p><label for="sera_verify_confirm"><input type="checkbox" name="sera_verify_confirm" id="sera_verify_confirm" value="1" /> ';
 			
 			$form .= esc_html( sprintf( apply_filters( 'sera_confirm_text', __( 'I am at least %s years old', 'sera' ) ), sera_get_minimum_age() ) ) . '</label></p>';
+			
+			break;
+
+				// If set to date inputs
+		case 'yearcheck' :
+			
+			$form .= '<div class="date-inputs yearcheck"><p>
+			<input type="text" name="sera_verify_y" id="sera_verify_y" maxlength="4" value="" placeholder="YYYY" />
+			</p></div>';
+
+			$form .= '<p><label for="sera_verify_confirm"><input type="checkbox" name="sera_verify_confirm" id="sera_verify_confirm" value="1" /> ';
+			
+			$form .= esc_html( sprintf( apply_filters( 'sera_confirm_text', __( 'I\'m over %s', 'sera' ) ), sera_get_minimum_age() ) ) . '</label></p>';
 			
 			break;
 			

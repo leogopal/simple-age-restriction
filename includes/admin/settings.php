@@ -195,6 +195,7 @@ function sera_settings_callback_input_type_field() { ?>
 		<option value="dropdowns" <?php selected( 'dropdowns', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'Date dropdowns', 'sera' ); ?></option>
 		<option value="inputs" <?php selected( 'inputs', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'Inputs', 'sera' ); ?></option>
 		<option value="checkbox" <?php selected( 'checkbox', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'Confirm checkbox', 'sera' ); ?></option>
+		<option value="yearcheck" <?php selected( 'yearcheck', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'Year and confirm checkbox', 'sera' ); ?></option>
 	</select>
 	
 <?php }
