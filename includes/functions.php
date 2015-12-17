@@ -8,9 +8,7 @@
  */
 
 // Don't allow this file to be accessed directly.
-if ( ! defined( 'WPINC' ) ) {
-	die();
-}
+if ( ! defined( 'WPINC' ) ) { die(); }
 
 /**
  * Prints the minimum age.
