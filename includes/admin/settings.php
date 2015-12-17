@@ -196,6 +196,7 @@ function sera_settings_callback_input_type_field() { ?>
 		<option value="inputs" <?php selected( 'inputs', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'Inputs', 'sera' ); ?></option>
 		<option value="checkbox" <?php selected( 'checkbox', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'Confirm checkbox', 'sera' ); ?></option>
 		<option value="yearcheck" <?php selected( 'yearcheck', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'Year and confirm checkbox', 'sera' ); ?></option>
+		<option value="tjgcustom" <?php selected( 'tjgcustom', get_option( '_sera_input_type', 'dropdowns' ) ); ?>><?php esc_html_e( 'TJG Custom Agegate', 'sera' ); ?></option>
 	</select>
 	
 <?php }

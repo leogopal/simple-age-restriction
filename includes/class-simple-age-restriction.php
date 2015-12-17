@@ -378,6 +378,26 @@ final class Simple_Age_Restriction {
 				
 				endif;
 				break;
+
+			case 'tjgcustom' :
+				
+				if ( checkdate( (int) $_POST['sera_verify_m_hidden'], (int) $_POST['sera_verify_d_hidden'], (int) $_POST['sera_verify_y_hidden'] ) ) :
+					
+					$age = sera_get_visitor_age( $_POST['sera_verify_y_hidden'], $_POST['sera_verify_m_hidden'], $_POST['sera_verify_d_hidden'] );
+					
+				    if ( $age >= sera_get_minimum_age() )
+						$is_verified = true;
+					else
+						$error = 3; // Not old enough
+						
+				else :
+					
+					$error = 4; // Invalid date
+					
+				endif;
+				
+				break;
+
 			
 			default :
 				

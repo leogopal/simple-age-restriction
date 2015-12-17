@@ -534,6 +534,16 @@ function sera_get_verify_form() {
 			$form .= esc_html( sprintf( apply_filters( 'sera_confirm_text', __( 'I\'m over %s', 'sera' ) ), sera_get_minimum_age() ) ) . '</label></p>';
 			
 			break;
+
+		case 'tjgcustom' :
+			
+			$form .= '<div class="tjgcustom-fields"><p>
+			<input type="hidden" name="sera_verify_d_hidden" id="sera_verify_d_hidden" value="" />
+			<input type="hidden" name="sera_verify_m_hidden" id="sera_verify_m_hidden" value="" />
+			<input type="hidden" name="sera_verify_y_hidden" id="sera_verify_y_hidden" value="" />
+			</p></div>';
+			
+			break;
 			
 	};
 	
