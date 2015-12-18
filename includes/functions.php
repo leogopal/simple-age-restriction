@@ -551,6 +551,7 @@ function sera_get_verify_form() {
 				</div>
 					<input type="submit" name="sera_verify" id="sera_verify" value="' . esc_attr( $submit_button_label ) . '" />
 					<small>You must be over 18 to Enter</small>
+
 			</div>';
 
 			break;
