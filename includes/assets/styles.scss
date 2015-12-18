@@ -75,7 +75,7 @@ $subscribeGoldA   : rgba(159, 133, 81, 0.40);
 	.container {
 		&.block-access {
 			@include breakpoint(0 $toTablet) {
-				background-image: url('img/tjg/ara-mob-tjg-agegate.jpg');
+				background-image: url('img/ara-mob-tjg-agegate.jpg');
 			}
 			&:before{ //disallows clicking through
 				content:'';
@@ -100,9 +100,9 @@ $subscribeGoldA   : rgba(159, 133, 81, 0.40);
 					}
 				}
 				&.krone{
-					background-image: url('img/tjg/ara-mob-krone-agegate.jpg');
+					background-image: url('img/ara-mob-krone-agegate.jpg');
 					@include breakpoint($tablet) {
-						background-image: url('img/tjg/ara-krone-agegate.jpg');
+						background-image: url('img/ara-krone-agegate.jpg');
 					}
 					.logo{
 						@include breakpoint($fromTablet $toDesktop) {
@@ -115,12 +115,12 @@ $subscribeGoldA   : rgba(159, 133, 81, 0.40);
 				&.tjg{
 
 					@include breakpoint($tablet) {
-						background-image: url('img/tjg/ara-tjg-agegate.jpg');
+						background-image: url('img/ara-tjg-agegate.jpg');
 					}
 					.logo{
 						top: inherit;
 						bottom: 9%;
-						background-image: url('img/tjg/tjg-logo-white-trans-icon.svg');
+						background-image: url('img/tjg-logo-white-trans-icon.svg');
 						@include breakpoint((max-height 320px )){
 							margin-top: 27%;
 						}
@@ -217,7 +217,7 @@ $subscribeGoldA   : rgba(159, 133, 81, 0.40);
 	overflow-y: scroll;
 
 		@include breakpoint(0 $toTablet) {
-			background-image: url('img/tjg/ara-mob-tjg-agegate.jpg');
+			background-image: url('img/ara-mob-tjg-agegate.jpg');
 		}
 
 		&:before{ //disallows clicking through
@@ -251,9 +251,9 @@ $subscribeGoldA   : rgba(159, 133, 81, 0.40);
 					}
 				}
 				&.krone{
-					background-image: url('img/tjg/ara-mob-krone-agegate.jpg');
+					background-image: url('img/ara-mob-krone-agegate.jpg');
 					@include breakpoint($tablet) {
-						background-image: url('img/tjg/ara-krone-agegate.jpg');
+						background-image: url('img/ara-krone-agegate.jpg');
 					}
 					.logo{
 						@include breakpoint($fromTablet $toDesktop) {
@@ -266,12 +266,12 @@ $subscribeGoldA   : rgba(159, 133, 81, 0.40);
 				&.tjg{
 
 					@include breakpoint($tablet) {
-						background-image: url('img/tjg/ara-tjg-agegate.jpg');
+						background-image: url('img/ara-tjg-agegate.jpg');
 					}
 					.logo{
 						top: inherit;
 						bottom: 9%;
-						background-image: url('img/tjg/tjg-logo-white-trans-icon.svg');
+						background-image: url('img/tjg-logo-white-trans-icon.svg');
 						@include breakpoint((max-height 320px )){
 							margin-top: 27%;
 						}

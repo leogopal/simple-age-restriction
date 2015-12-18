@@ -11,7 +11,7 @@
 */
 @media (min-width: 0) and (max-width: 766px) {
   .page-template-page-agegate .container.block-access {
-    background-image: url("img/tjg/ara-mob-tjg-agegate.jpg");
+    background-image: url("img/ara-mob-tjg-agegate.jpg");
   }
 }
 .page-template-page-agegate .container.block-access:before {
@@ -40,11 +40,11 @@
   }
 }
 .page-template-page-agegate .container.block-access .landing-panel.krone {
-  background-image: url("img/tjg/ara-mob-krone-agegate.jpg");
+  background-image: url("img/ara-mob-krone-agegate.jpg");
 }
 @media (min-width: 767px) {
   .page-template-page-agegate .container.block-access .landing-panel.krone {
-    background-image: url("img/tjg/ara-krone-agegate.jpg");
+    background-image: url("img/ara-krone-agegate.jpg");
   }
 }
 @media (min-width: 767px) and (max-width: 1023px) {
@@ -57,13 +57,13 @@
 }
 @media (min-width: 767px) {
   .page-template-page-agegate .container.block-access .landing-panel.tjg {
-    background-image: url("img/tjg/ara-tjg-agegate.jpg");
+    background-image: url("img/ara-tjg-agegate.jpg");
   }
 }
 .page-template-page-agegate .container.block-access .landing-panel.tjg .logo {
   top: inherit;
   bottom: 9%;
-  background-image: url("img/tjg/tjg-logo-white-trans-icon.svg");
+  background-image: url("img/tjg-logo-white-trans-icon.svg");
 }
 @media (max-height: 320px) {
   .page-template-page-agegate .container.block-access .landing-panel.tjg .logo {
@@ -171,7 +171,7 @@
 }
 @media (min-width: 0) and (max-width: 766px) {
   #sera-overlay-wrap {
-    background-image: url("img/tjg/ara-mob-tjg-agegate.jpg");
+    background-image: url("img/ara-mob-tjg-agegate.jpg");
   }
 }
 #sera-overlay-wrap:before {
@@ -210,11 +210,11 @@
   }
 }
 #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.krone {
-  background-image: url("img/tjg/ara-mob-krone-agegate.jpg");
+  background-image: url("img/ara-mob-krone-agegate.jpg");
 }
 @media (min-width: 767px) {
   #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.krone {
-    background-image: url("img/tjg/ara-krone-agegate.jpg");
+    background-image: url("img/ara-krone-agegate.jpg");
   }
 }
 @media (min-width: 767px) and (max-width: 1023px) {
@@ -227,13 +227,13 @@
 }
 @media (min-width: 767px) {
   #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.tjg {
-    background-image: url("img/tjg/ara-tjg-agegate.jpg");
+    background-image: url("img/ara-tjg-agegate.jpg");
   }
 }
 #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.tjg .logo {
   top: inherit;
   bottom: 9%;
-  background-image: url("img/tjg/tjg-logo-white-trans-icon.svg");
+  background-image: url("img/tjg-logo-white-trans-icon.svg");
 }
 @media (max-height: 320px) {
   #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.tjg .logo {
