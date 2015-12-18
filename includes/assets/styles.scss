@@ -1,258 +1,465 @@
-#sera-overlay-wrap { 
-	position: fixed; 
-	height: 100%;
-	width: 100%;
-	background: #ec1e33;
-	z-index: 10000;
-	display: block;
-	top: 0;
-	left: 0;
-	overflow-y: scroll;
-	padding: 30px;
+/*
+    Media Queries
+ */
+@import 'lib/_knife.scss';
+@import 'lib/breakpoint/_breakpoint.scss';
 
-	.bg-image {
-		background-image: url("img/red-desk.png");
-	    background-repeat: no-repeat;
-		background-position: center bottom;
-	    background-size: 50%;
-	    width: 100%;
-	    height: 100%;
-	    position: absolute;
-	    bottom: 0px;
-	    right: 0px;
-	    z-index: -1;
-	    background-attachment: fixed;
-	    @media screen and (min-width: 481px) and (max-width: 980px) {
-			background-size: 80%;
-	    }
-		@media screen and (min-width: 0) and (max-width: 480px) {
-			background-image: url("img/red.png");
-		    background-repeat: no-repeat;
-			background-position: center bottom;
-		    background-size: 100%;
-		    width: 100%;
-		    height: 120%;
-		    position: absolute;
-		    bottom: 0px;
-		    right: 0px;
-		    z-index: -1;
-		    background-attachment: fixed;
-		}
-	}
-	
-	#araFooter {
-		border-top: 1px solid #8B2331;
-	    padding: 5px 0px;
-	    text-align: center;
-	    bottom: 0px;
-	    left: 0px;
-	    width: 100%;
-	    background: #FFF none repeat scroll 0% 0%;
-	    z-index: 1;
-	    position: fixed;
+$small : 480px !default;
+$toSmall : 479px !default;
+$fromSmall : 480px !default;
 
-	    p {
-	    	margin: 0px;
-	    }
+$mobile : 0px !default;
+$toMobile : 766px !default;
+$fromMobile : 0px !default;
 
-	    a {
-	    	color: #151515;
-	    	text-decoration: none;
-			font-weight: 300;
-	    }
-	}
-	
+$tablet : 767px !default;
+$toTablet : 766px !default;
+$fromTablet : 767px !default;
 
-	@media screen and (min-width: 0) and (max-width: 480px) {
-		padding: 20px;
-	}
+$desktop : 1024px !default;
+$toDesktop : 1023px !default;
+$fromDesktop : 1024px !default;
 
-	#sera-overlay-inner {
-		height: 100%;
-		width: 100%;
-		padding: 5px;
-		border: 10px solid #95c888;
-		z-index: 2;
-		background: transparent;
+$monitor : 1330px !default;
+$toMonitor : 1329px !default;
+$fromMonitor : 1330px !default;
 
+$big : 1440px !default;
+$toBig : 1440px !default;
+$fromBig : 1440px !default;
 
-		@media screen and (min-width: 0) and (max-width: 480px) {
-			border: 5px solid #95c888;
-		}
+/* Custom Font Stacks */
+// Adding !important: http://www.wastedpotential.com/solved-google-web-fonts-not-displaying-on-some-macs/
+@mixin fontfamily1 {
+	//Krone text
+	font-family: 'Source Sans Pro', sans-serif !important;
+	font-weight: 400;
+}
+@mixin fontfamily2 {
+	// Krone headings
+	font-family: 'Cinzel', serif !important;
+	font-weight: 400;
+}
+@mixin fontfamily3 {
+	// TJG text + headings
+	font-family: 'Tinos', serif !important;
+	font-weight: 400;
+}
+@mixin iconfont {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+}
+/*
+  Colors
+*/
+// Note: Default styles are for Krone. TJG styles targeted by body class 'tjg'.
 
-		h1 {
-			color: #95c888;
-			text-align: center;
-			margin-top: 50px;
-			&.title {
-				font-size: 66px;
-				line-height: 75px;
-				margin-bottom: 15px;
-				@media screen and (min-width: 0) and (max-width: 480px) {
-					font-size: 33px;
-					line-height: 15px;
-					margin-bottom: 5px;
-				}
-			    @media screen and (min-width: 481px) and (max-width: 640px) {
-					font-size: 43px;
-					line-height: 45px;
-					margin-bottom: 15px;
-				}
+// Krone colours
+$lightgold        : #a68b52;
+$gold             : #c4a364;
+$medgold          : #9f8551;
+$darkgold         : #8d7d55;
+$black            : #020201;
+$navy             : #1d2331; //27 35 49
+$grey             : #626366;
+$lightgrey        : #f1f1f2;
+$medgoldA         : rgba(159, 133, 81, 0.75);
+$subscribeGoldA   : rgba(159, 133, 81, 0.40);
+
+.page-template-page-agegate {
+	.container {
+		&.block-access {
+			@include breakpoint(0 $toTablet) {
+				background-image: url('img/tjg/ara-mob-tjg-agegate.jpg');
 			}
-			&.sub-title {
-				font-size: 80px;
-				margin-top: 0px;
-				@media screen and (min-width: 0) and (max-width: 480px) {
-					font-size: 40px;
-					margin-top: 0px;
-				}
-
-			    @media screen and (min-width: 481px) and (max-width: 640px) {
-					font-size: 53px;
-					line-height: 15px;
-					margin-bottom: 5px;
-				}
-			}
-			
-		}
-
-		#sera-overlay {
-			// position: relative;
-			// top: auto;
-			// left: auto;
-			// height: auto;
-			margin: 0 auto;
-			background: transparent;
-			z-index: 10001;
-			text-align: center;
-			padding: 30px 40px 34px;
-			color: white;
-			width: 400px;
-			margin-top: 100px;
-			@media screen and (min-width: 0) and (max-width: 480px) {
-				margin-top: 120px;
-			}
-
-			h2 {
-				font-size: 25px;
-				margin-bottom: 20px;
-				color: white;
-				@media screen and (min-width: 0) and (max-width: 480px) {
-					font-size: 17px;
-					margin-bottom: 10px;
-				}
-
-			}
-			
-			p {
-				margin-bottom: 10px;
-			}
-			input[type=submit] {
-				background: #95c888;
-				border: #95c888;
-				color: white;
-				padding: 5px 50px;
-				height: auto;
-				border-radius: 5px;
-			}
-			.submit {
-				margin-bottom: 0;
-			}
-			input {
-					&#sera_verify_confirm {
-						display: inline-block;
-				}
-			}
-			.date-inputs {
-				background: white none repeat scroll 0% 0%;
-				width: 250px;
-				margin: 0 auto;
-				color: #95c888;
-				border-radius: 5px;
-				
-				&.yearcheck {
-					width: 100px;
-					input[type=text] {
-						width: 100px;
-					}
-				}
-
-
-				input[type=text] {
-					width: 50px;
-					outline: none;
-					text-align: center;
-					margin-bottom: 0;
-					border: none;
-					color: #95c888;
-					padding: 10px;
-
-					&::-webkit-input-placeholder {
-					   color: #95c888;
-					}
-
-					&:-moz-placeholder { 
-						color:#95c888; 
-					}
-
-					&::-moz-placeholder { 
-					   color: #95c888;  
-					}
-
-					&:-ms-input-placeholder {  
-					   color: #95c888  
-					}
-
-					&:focus {
-
-						&::-webkit-input-placeholder {
-							transition: opacity 0.5s 0.5s ease; 
-							opacity: 0;
-						}
-
-						&:-moz-placeholder { 
-							transition: opacity 0.5s 0.5s ease; 
-							opacity: 0;
-						}
-
-						&::-moz-placeholder {
-							transition: opacity 0.5s 0.5s ease; 
-							opacity: 0;
-						}
-						
-						&:-ms-input-placeholder {
-							transition: opacity 0.5s 0.5s ease; 
-							opacity: 0;
-						}
-
-
-					}
-
-				}
-
-			}
-
-
-			#sera_verify_y {
-				width: 70px;
-			}
-
-			.error {
-				padding: 12px;
-				background-color: #ffebe8;
-				border: 1px solid #c00;
-				-webkit-border-radius: 3px;
-				   -moz-border-radius: 3px;
-				        border-radius: 3px;
-			}
-
-			@media screen and (min-width: 0) and (max-width: 480px) {
-				padding: 0px;
+			&:before{ //disallows clicking through
+				content:'';
+				position: absolute;
+				top: 0px;
+				left: 0px;
 				width: 100%;
+				height: 100%;
+				opacity: 0;
+				-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";/*IE8*/
+				z-index: 1;
 			}
+			.btn-wrap{
+				opacity: 0;
+				-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";/*IE8*/
+			}
+			.landing-panel{
+				.logo{
+					top: 9%;
+					@include breakpoint($tablet) {
+						top: 24%;
+					}
+				}
+				&.krone{
+					background-image: url('img/tjg/ara-mob-krone-agegate.jpg');
+					@include breakpoint($tablet) {
+						background-image: url('img/tjg/ara-krone-agegate.jpg');
+					}
+					.logo{
+						@include breakpoint($fromTablet $toDesktop) {
+							right: 16%;
+							left: inherit;
+							@include krem ('margin-right', -130px );
+						}
+					}
+				}
+				&.tjg{
 
+					@include breakpoint($tablet) {
+						background-image: url('img/tjg/ara-tjg-agegate.jpg');
+					}
+					.logo{
+						top: inherit;
+						bottom: 9%;
+						background-image: url('img/tjg/tjg-logo-white-trans-icon.svg');
+						@include breakpoint((max-height 320px )){
+							margin-top: 27%;
+						}
+						@include breakpoint($tablet) {
+							top: 24%;
+							bottom: inherit;
+						}
+						@include breakpoint($fromTablet $toDesktop) {
+							left: 16%;
+							@include krem ('margin-left', -130px );
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.agegate-wrap {
+	display: none;
+	position: absolute;
+	top: 47%;
+	left: 50%;
+	background: #fff;
+	border: 1px solid $gold;
+	color: $gold;
+	text-align: center;
+	z-index: 2;
+	@include krem('width',230px);
+	@include krem('margin-left',-115px);
+	@include krem('margin-top',-130px);
+	@include krem('padding-left',20px);
+	@include krem('padding-right',20px);
+	@include breakpoint($tablet) {
+		top: 40%;
+	}
+	h3{
+		@include ksuffix(0.25, true);
+	}
+}
+#agegate-form {
+	.mbsc-mobiscroll{
+		.dwwb{
+			background: #fff;
+			span{
+				display: block;
+			}
+		}
+		.dwwol {
+		    border: none;
+		}
+		.dwwr{
+			@include fontfamily2();
+		}
+		.dw-sel .dw-i{
+			color: $darkgold;
+			font-size: 1.35em;
+		}
+		.dwwc > .dwfl{
+			border-left: none;
+		}
+		i{
+			color: $gold;
+			@include krem('font-size',40px);
 
 		}
 	}
 }
+#sera_verify {
+	border: 1px solid;
+	display: block;
+    font-size: 1.3125rem;
+    line-height: 26px;
+    background: white;
+	color: $gold;
+	min-width: 100%;
+	@include krem('padding',5px);
+	@include kprefix(0.5, true);
+	&:hover{
+		text-decoration: none;
+	}
+
+}
+
+// #sera-overlay-wrap {
+// 	position: fixed;
+// 	height: 100%;
+// 	width: 100%;
+// 	background: #ec1e33;
+// 	z-index: 10000;
+// 	display: block;
+// 	top: 0;
+// 	left: 0;
+// 	overflow-y: scroll;
+// 	padding: 30px;
+
+// 	.bg-image {
+// 		background-image: url("img/red-desk.png");
+// 	    background-repeat: no-repeat;
+// 		background-position: center bottom;
+// 	    background-size: 50%;
+// 	    width: 100%;
+// 	    height: 100%;
+// 	    position: absolute;
+// 	    bottom: 0px;
+// 	    right: 0px;
+// 	    z-index: -1;
+// 	    background-attachment: fixed;
+// 	    @media screen and (min-width: 481px) and (max-width: 980px) {
+// 			background-size: 80%;
+// 	    }
+// 		@media screen and (min-width: 0) and (max-width: 480px) {
+// 			background-image: url("img/red.png");
+// 		    background-repeat: no-repeat;
+// 			background-position: center bottom;
+// 		    background-size: 100%;
+// 		    width: 100%;
+// 		    height: 120%;
+// 		    position: absolute;
+// 		    bottom: 0px;
+// 		    right: 0px;
+// 		    z-index: -1;
+// 		    background-attachment: fixed;
+// 		}
+// 	}
+
+// 	#araFooter {
+// 		border-top: 1px solid #8B2331;
+// 	    padding: 5px 0px;
+// 	    text-align: center;
+// 	    bottom: 0px;
+// 	    left: 0px;
+// 	    width: 100%;
+// 	    background: #FFF none repeat scroll 0% 0%;
+// 	    z-index: 1;
+// 	    position: fixed;
+
+// 	    p {
+// 	    	margin: 0px;
+// 	    }
+
+// 	    a {
+// 	    	color: #151515;
+// 	    	text-decoration: none;
+// 			font-weight: 300;
+// 	    }
+// 	}
+
+
+// 	@media screen and (min-width: 0) and (max-width: 480px) {
+// 		padding: 20px;
+// 	}
+
+// 	#sera-overlay-inner {
+// 		height: 100%;
+// 		width: 100%;
+// 		padding: 5px;
+// 		border: 10px solid #95c888;
+// 		z-index: 2;
+// 		background: transparent;
+
+
+// 		@media screen and (min-width: 0) and (max-width: 480px) {
+// 			border: 5px solid #95c888;
+// 		}
+
+// 		h1 {
+// 			color: #95c888;
+// 			text-align: center;
+// 			margin-top: 50px;
+// 			&.title {
+// 				font-size: 66px;
+// 				line-height: 75px;
+// 				margin-bottom: 15px;
+// 				@media screen and (min-width: 0) and (max-width: 480px) {
+// 					font-size: 33px;
+// 					line-height: 15px;
+// 					margin-bottom: 5px;
+// 				}
+// 			    @media screen and (min-width: 481px) and (max-width: 640px) {
+// 					font-size: 43px;
+// 					line-height: 45px;
+// 					margin-bottom: 15px;
+// 				}
+// 			}
+// 			&.sub-title {
+// 				font-size: 80px;
+// 				margin-top: 0px;
+// 				@media screen and (min-width: 0) and (max-width: 480px) {
+// 					font-size: 40px;
+// 					margin-top: 0px;
+// 				}
+
+// 			    @media screen and (min-width: 481px) and (max-width: 640px) {
+// 					font-size: 53px;
+// 					line-height: 15px;
+// 					margin-bottom: 5px;
+// 				}
+// 			}
+
+// 		}
+
+// 		#sera-overlay {
+// 			// position: relative;
+// 			// top: auto;
+// 			// left: auto;
+// 			// height: auto;
+// 			margin: 0 auto;
+// 			background: transparent;
+// 			z-index: 10001;
+// 			text-align: center;
+// 			padding: 30px 40px 34px;
+// 			color: white;
+// 			width: 400px;
+// 			margin-top: 100px;
+// 			@media screen and (min-width: 0) and (max-width: 480px) {
+// 				margin-top: 120px;
+// 			}
+
+// 			h2 {
+// 				font-size: 25px;
+// 				margin-bottom: 20px;
+// 				color: white;
+// 				@media screen and (min-width: 0) and (max-width: 480px) {
+// 					font-size: 17px;
+// 					margin-bottom: 10px;
+// 				}
+
+// 			}
+
+// 			p {
+// 				margin-bottom: 10px;
+// 			}
+// 			input[type=submit] {
+// 				background: #95c888;
+// 				border: #95c888;
+// 				color: white;
+// 				padding: 5px 50px;
+// 				height: auto;
+// 				border-radius: 5px;
+// 			}
+// 			.submit {
+// 				margin-bottom: 0;
+// 			}
+// 			input {
+// 					&#sera_verify_confirm {
+// 						display: inline-block;
+// 				}
+// 			}
+// 			.date-inputs {
+// 				background: white none repeat scroll 0% 0%;
+// 				width: 250px;
+// 				margin: 0 auto;
+// 				color: #95c888;
+// 				border-radius: 5px;
+
+// 				&.yearcheck {
+// 					width: 100px;
+// 					input[type=text] {
+// 						width: 100px;
+// 					}
+// 				}
+
+
+// 				input[type=text] {
+// 					width: 50px;
+// 					outline: none;
+// 					text-align: center;
+// 					margin-bottom: 0;
+// 					border: none;
+// 					color: #95c888;
+// 					padding: 10px;
+
+// 					&::-webkit-input-placeholder {
+// 					   color: #95c888;
+// 					}
+
+// 					&:-moz-placeholder {
+// 						color:#95c888;
+// 					}
+
+// 					&::-moz-placeholder {
+// 					   color: #95c888;
+// 					}
+
+// 					&:-ms-input-placeholder {
+// 					   color: #95c888
+// 					}
+
+// 					&:focus {
+
+// 						&::-webkit-input-placeholder {
+// 							transition: opacity 0.5s 0.5s ease;
+// 							opacity: 0;
+// 						}
+
+// 						&:-moz-placeholder {
+// 							transition: opacity 0.5s 0.5s ease;
+// 							opacity: 0;
+// 						}
+
+// 						&::-moz-placeholder {
+// 							transition: opacity 0.5s 0.5s ease;
+// 							opacity: 0;
+// 						}
+
+// 						&:-ms-input-placeholder {
+// 							transition: opacity 0.5s 0.5s ease;
+// 							opacity: 0;
+// 						}
+
+
+// 					}
+
+// 				}
+
+// 			}
+
+
+// 			#sera_verify_y {
+// 				width: 70px;
+// 			}
+
+// 			.error {
+// 				padding: 12px;
+// 				background-color: #ffebe8;
+// 				border: 1px solid #c00;
+// 				-webkit-border-radius: 3px;
+// 				   -moz-border-radius: 3px;
+// 				        border-radius: 3px;
+// 			}
+
+// 			@media screen and (min-width: 0) and (max-width: 480px) {
+// 				padding: 0px;
+// 				width: 100%;
+// 			}
+
+
+// 		}
+// 	}
+// }
 
