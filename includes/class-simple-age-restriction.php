@@ -321,17 +321,11 @@ final class Simple_Age_Restriction {
 							<div class="landing-panel krone">
 								<a href="<?php echo home_url(); ?>/krone">
 									<span class="logo"></span>
-									<span class="btn-wrap">
-										<span class="button landing sans-serif hover-effect">Discover Our Collection</span>
-									</span>
 								</a>
 							</div>
 							<div class="landing-panel tjg">
 								<a href="<?php echo home_url(); ?>/twee-jonge-gezellen">
 									<span class="logo"></span>
-									<span class="btn-wrap">
-										<span class="tjg button landing sans-serif hover-effect">Explore the farm</span>
-									</span>
 								</a>
 							</div>
 						</div>

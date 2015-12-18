@@ -157,3 +157,99 @@
 #sera_verify:hover {
   text-decoration: none;
 }
+
+#sera-overlay-wrap {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  z-index: 10000;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+}
+@media (min-width: 0) and (max-width: 766px) {
+  #sera-overlay-wrap {
+    background-image: url("img/tjg/ara-mob-tjg-agegate.jpg");
+  }
+}
+#sera-overlay-wrap:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  /*IE8*/
+  z-index: 1;
+}
+#sera-overlay-wrap #sera-overlay-inner {
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  height: 100%;
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel .logo {
+  top: 9%;
+}
+@media (min-width: 767px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel .logo {
+    top: 24%;
+  }
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.krone {
+  background-image: url("img/tjg/ara-mob-krone-agegate.jpg");
+}
+@media (min-width: 767px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.krone {
+    background-image: url("img/tjg/ara-krone-agegate.jpg");
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.krone .logo {
+    right: 16%;
+    left: inherit;
+    margin-right: -130px;
+    margin-right: -9.2857142857rem;
+  }
+}
+@media (min-width: 767px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.tjg {
+    background-image: url("img/tjg/ara-tjg-agegate.jpg");
+  }
+}
+#sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.tjg .logo {
+  top: inherit;
+  bottom: 9%;
+  background-image: url("img/tjg/tjg-logo-white-trans-icon.svg");
+}
+@media (max-height: 320px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.tjg .logo {
+    margin-top: 27%;
+  }
+}
+@media (min-width: 767px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.tjg .logo {
+    top: 24%;
+    bottom: inherit;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  #sera-overlay-wrap #sera-overlay-inner #sera-overlay .landing-panel.tjg .logo {
+    left: 16%;
+    margin-left: -130px;
+    margin-left: -9.2857142857rem;
+  }
+}
