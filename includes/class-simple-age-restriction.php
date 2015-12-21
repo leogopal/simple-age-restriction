@@ -207,9 +207,10 @@ final class Simple_Age_Restriction {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'sera-autotab', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.autotab.js', array('jquery') );
-
+		wp_enqueue_script( 'sera-cookie', plugin_dir_url( __FILE__ ) . 'assets/js/cookie.js', array() );
 		wp_enqueue_script( 'sera-scripts', plugin_dir_url( __FILE__ ) . 'assets/js/scripts.js', array('jquery') );
 		$myData = array(
+		    'ajax_url' => admin_url( 'admin-ajax.php' ),
 		    'needs_verification'	=> sera_needs_verification(),
 		    'pleaseWaitLabel' => __( 'Please wait...', 'default' )
 		);
@@ -478,9 +479,9 @@ final class Simple_Age_Restriction {
 			if ( isset( $_POST['sera_verify_remember'] ) )
 				$cookie_duration = time() +  ( sera_get_cookie_duration() * 60 );
 			else
-				$cookie_duration = 0;
+				$cookie_duration = time() + 60 * 60 * 24 * 1;
 
-			setcookie( 'age-verified', 1, $cookie_duration, COOKIEPATH, COOKIE_DOMAIN, false );
+			// setcookie( 'age-verified', 1, $cookie_duration, COOKIEPATH, COOKIE_DOMAIN, false );
 
 			wp_redirect( esc_url_raw( $redirect_url ) . '?age-verified=' . wp_create_nonce( 'age-verified' ) );
 			exit;

@@ -244,12 +244,19 @@ function sera_needs_verification() {
 		$return = false;
 
 	// Or, if there is a valid cookie let 'em through
-	if ( isset( $_COOKIE['age-verified'] ) )
-		$return = false;
+	if ( isset( $_COOKIE['age-gate'] ) ) {
+		$age_gate_cookie = $_COOKIE['age-gate'];
+		if ($age_gate_cookie == 'verified') {
+			$return = false;
+		}
+	}
 
 	return (bool) apply_filters( 'sera_needs_verification', $return );
 }
 
+// Call Ajax
+add_action( 'wp_ajax_sera_needs_verification', 'sera_needs_verification'); // ajax for logged in users
+add_action( 'wp_ajax_nopriv_sera_needs_verification', 'sera_needs_verification' ); // ajax for not logged in users
 
 /***********************************************************/
 /******************** Display Functions ********************/

@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 	});
 
 
-	if (sera.needs_verification) {
+	if (sera.needs_verification == 1) {
 		jQuery(".container").addClass('block-access');
 
 		jQuery('#agegate-form').mobiscroll().date({
@@ -52,8 +52,16 @@ jQuery(document).ready(function($) {
 		});
 
 	} else {
-		jQuery(".container").removeClass('block-access');
-	}
+		// alert('This is verified, I can do shit here.');
+		if (cookie.enabled()) {
+		   cookie.set( 'age-verified', 'verified', {
+			   expires: 7,
+			   secure: false
+			});
+		} else {
+
+		}
+}
 
 });
 
